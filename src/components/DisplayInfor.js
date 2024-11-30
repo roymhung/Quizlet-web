@@ -19,6 +19,8 @@ class DisplayInfor extends React.Component {
     // console.log(listUsers);
     // console.table(listUsers);
     //props => viết tất properties
+
+    //template + logic js
     return (
       <div className="display-infor-container">
         <img src={logo} />
