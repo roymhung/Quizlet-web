@@ -13,23 +13,36 @@ class DisplayInfor extends React.Component {
       <div>
         {listUsers.map((user, index) => {
           console.log(">>> check map user", user);
-          if (+user.age > 18) {
+
             return (
-              <div key={user.id} className="green">
+              <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
                 <div>My name's {user.name}</div>
                 <div>My age's {user.age}</div>
                 <hr />
               </div>
             );
-          } else {
-            return (
-              <div key={user.id} className="red">
-                <div>My name's {user.name}</div>
-                <div>My age's {user.age}</div>
-                <hr />
-              </div>
-            );
-          }
+
+
+
+
+
+        //   if (+user.age > 18) {
+        //     return (
+        //       <div key={user.id} className="green">
+        //         <div>My name's {user.name}</div>
+        //         <div>My age's {user.age}</div>
+        //         <hr />
+        //       </div>
+        //     );
+        //   } else {
+        //     return (
+        //       <div key={user.id} className="red">
+        //         <div>My name's {user.name}</div>
+        //         <div>My age's {user.age}</div>
+        //         <hr />
+        //       </div>
+        //     );
+        //   }
         })}
         {/* <div>My name's {name}</div>
         <div>My age's {age}</div>
