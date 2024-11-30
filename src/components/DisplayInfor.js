@@ -1,5 +1,5 @@
 import React from "react";
-import UserInfor from "./UserInfor";
+import AddUserInfor from "./AddUserInfor";
 
 class DisplayInfor extends React.Component {
   state = {
@@ -26,7 +26,6 @@ class DisplayInfor extends React.Component {
               this.handleShowHide();
             }}
           >
-           
             {this.state.isShowListUser === true
               ? "Hide list users:"
               : "Show list users:"}
