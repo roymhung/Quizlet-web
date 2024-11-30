@@ -1,5 +1,5 @@
 import React from "react";
-import AddUserInfor from "./AddUserInfor";
+import './DisplayInfor.scss';
 
 class DisplayInfor extends React.Component {
   state = {
@@ -19,7 +19,7 @@ class DisplayInfor extends React.Component {
     // console.table(listUsers);
     //props => viết tất properties
     return (
-      <div>
+      <div className='display-infor-container'>
         <div>
           <span
             onClick={() => {
