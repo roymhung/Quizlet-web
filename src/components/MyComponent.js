@@ -26,19 +26,22 @@ class MyComponent extends React.Component {
     // })
     // c2
     this.setState({
-      listUsers:[...this.state.listUsers, userObj]
-    })
+      listUsers: [...this.state.listUsers, userObj],
+    });
   };
   // jsx
   render() {
     //DRY: don't-repeat youseft
     return (
-      <div>
-        <AddUserInfor handleAddNewUser={this.handleAddNewUser} />
-        <br />
-        <br />
-        <DisplayInfor listUsers={this.state.listUsers} />
-      </div>
+      <>
+        <div className="a">
+          <AddUserInfor handleAddNewUser={this.handleAddNewUser} />
+          <br />
+          <br />
+          <DisplayInfor listUsers={this.state.listUsers} />
+        </div>
+        <div className="b"> </div>
+      </>
     );
   }
 }
