@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./DisplayInfor.scss";
-import logo1 from "./../logo.svg";
+import logo from "./../logo.svg";
 
 //stateless vs stateful
 // class DisplayInfor extends React.Component {
