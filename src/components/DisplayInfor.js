@@ -3,9 +3,31 @@ import "./DisplayInfor.scss";
 import logo from "./../logo.svg";
 
 class DisplayInfor extends React.Component {
-  state = {
-    isShowListUser: true,
-  };
+  constructor(props) {
+    console.log(">>>> call constructor: 1");
+    super(props);
+    // No error because babel compiler
+    this.state = {
+      isShowListUser: true,
+    };
+  }
+
+  componentDidMount() {
+    console.log(">>>>: call me componentDidMount");
+    setTimeout(()=>{
+      document.title = "Quizlet-web";
+    }, 3000);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot){
+    console.log(">>> call me component did update", this.props, prevProps);
+    if(this.props.listUsers !== prevProps.listUsers){
+      if(this.props.listUsers.length === 5){
+        alert('you got 5 users')
+      }
+    }
+  }
+
   handleShowHide = () => {
     this.setState({
       isShowListUser: !this.state.isShowListUser,
@@ -13,6 +35,7 @@ class DisplayInfor extends React.Component {
   };
 
   render() {
+    console.log(">>> call me render ");
     //destructuring array/object
     //const listusers = this.props.listUsers;
     const { listUsers } = this.props;
@@ -45,7 +68,9 @@ class DisplayInfor extends React.Component {
                     <div>My age's {user.age}</div>
                   </div>
                   <div>
-                    <button onClick={() => this.props.handleDeleteUser(user.id)}>
+                    <button
+                      onClick={() => this.props.handleDeleteUser(user.id)}
+                    >
                       Delete
                     </button>
                   </div>
